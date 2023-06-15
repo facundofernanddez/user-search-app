@@ -1,4 +1,4 @@
-import SearchIcon from "@/components/icons/SearchIcon";
+import { SearchIcon } from "@/components/icons/SearchIcon";
 
 export const FormSearchUser = () => {
   return (
