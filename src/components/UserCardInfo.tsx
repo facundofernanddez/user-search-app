@@ -6,8 +6,8 @@ import { TwitterIcon } from "./icons/TwitterIcon";
 
 export const UserCardInfo = () => {
   return (
-    <article className="grid-areas p-2 rounded-xl bg-blue-900 text-white">
-      <div className="section-logo bg-gray-200 grid place-content-center rounded-full h-24 w-24 p-1">
+    <article className="grid-areas p-4 rounded-xl bg-blue-900 text-white">
+      <div className="section-logo mr-3 bg-gray-200 grid place-content-center rounded-full h-24 w-24 p-1 lg:mx-auto">
         <GithubIcon className="relative top-2 h-full w-full" />
       </div>
       <div className="section-title">
