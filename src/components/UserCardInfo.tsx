@@ -7,33 +7,31 @@ export const UserCardInfo = () => {
         <GithubIcon className="relative top-2 h-full w-full" />
       </div>
       <div className="section-title">
-        <h2>the octocat</h2>
+        <h2 className="font-bold text-3xl">the octocat</h2>
         <p>@octocat</p>
       </div>
-      <div className="section-date">
+      <div className="section-date lg:text-right">
         <p>Joined 25 Jan 2011</p>
       </div>
-      <p className="section-description">
+      <p className="section-description mt-8 leading-loose">
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corrupti
-        minima explicabo voluptatum, totam, blanditiis adipisci architecto,
-        fugiat voluptatibus reiciendis eligendi nihil quae optio quidem ex unde.
-        Culpa magni atque quas.
+        minima explicabo voluptatum, totam, blanditiis adipisci architecto
       </p>
-      <div className="section-number flex justify-around bg-blue-950">
+      <div className="section-number mt-4 flex justify-around bg-blue-950 p-8 rounded-xl text-center">
         <article>
           <p>Repos</p>
-          <p>8</p>
+          <p className="font-bold text-xl">8</p>
         </article>
         <article>
           <p>Followers</p>
-          <p>345</p>
+          <p className="font-bold text-xl">345</p>
         </article>
         <article>
           <p>Following</p>
-          <p>8</p>
+          <p className="font-bold text-xl">8</p>
         </article>
       </div>
-      <div className="section-social md:grid grid-cols-2">
+      <div className="section-social md:grid grid-cols-2 mt-4">
         <article>
           <i>icono</i>
           <p>san francisco</p>
