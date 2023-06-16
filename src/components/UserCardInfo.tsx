@@ -1,4 +1,8 @@
+import { BuildingIcon } from "./icons/BuildingIcon";
 import { GithubIcon } from "./icons/GithubIcon";
+import { LinkIcon } from "./icons/LinkIcon";
+import { LocationIcon } from "./icons/LocationIcon";
+import { TwitterIcon } from "./icons/TwitterIcon";
 
 export const UserCardInfo = () => {
   return (
@@ -31,22 +35,30 @@ export const UserCardInfo = () => {
           <p className="font-bold text-xl">8</p>
         </article>
       </div>
-      <div className="section-social md:grid grid-cols-2 mt-4">
-        <article>
-          <i>icono</i>
-          <p>san francisco</p>
+      <div className="section-social md:grid grid-cols-2 mt-4 space-y-3">
+        <article className="flex space-x-2">
+          <i>
+            <LocationIcon className="fill-white" width={"1rem"} />
+          </i>
+          <a href="#">san francisco</a>
         </article>
-        <article>
-          <i>icono</i>
-          <p>san francisco</p>
+        <article className="flex space-x-2">
+          <i>
+            <LinkIcon className="fill-white" width={"1rem"} />
+          </i>
+          <a href="#">https://www.github.com</a>
         </article>
-        <article>
-          <i>icono</i>
-          <p>san francisco</p>
+        <article className="flex space-x-2">
+          <i>
+            <TwitterIcon className="fill-white" width={"1rem"} />
+          </i>
+          <a href="#">https://www.twitter.com</a>
         </article>
-        <article>
-          <i>icono</i>
-          <p>san francisco</p>
+        <article className="flex space-x-2">
+          <i>
+            <BuildingIcon className="fill-white" width={"1rem"} />
+          </i>
+          <a href="#">@github</a>
         </article>
       </div>
     </article>
