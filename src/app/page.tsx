@@ -1,11 +1,12 @@
 import FormSearchUser from "@/components/FormSearchUser";
+import { UserCardInfo } from "@/components/UserCardInfo";
 import React from "react";
 
 const Home = () => {
   return (
     <>
       <FormSearchUser />
-      <article>Todo el chamu de la pag</article>
+      <UserCardInfo />
     </>
   );
 };
