@@ -2,7 +2,7 @@ import { SearchIcon } from "@/components/icons/SearchIcon";
 
 export const FormSearchUser = () => {
   return (
-    <form className="flex flex-wrap gap-2 items-center bg-blue-900 p-2 rounded-xl mb-6">
+    <form className="flex flex-wrap gap-2 items-center bg-blue-900 p-4 rounded-xl mb-6">
       <span className="min-w-[20px]">
         <SearchIcon className="fill-blue-500" />
       </span>
@@ -17,5 +17,3 @@ export const FormSearchUser = () => {
     </form>
   );
 };
-
-export default FormSearchUser;

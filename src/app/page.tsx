@@ -1,4 +1,4 @@
-import FormSearchUser from "@/components/FormSearchUser";
+import { FormSearchUser } from "@/components/FormSearchUser";
 import { UserCardInfo } from "@/components/UserCardInfo";
 import React from "react";
 
