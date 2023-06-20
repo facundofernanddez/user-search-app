@@ -16,7 +16,8 @@ const Home = () => {
   return (
     <>
       <FormSearchUser getUser={getUser} />
-      <UserCardInfo user={user} />
+      {user && <UserCardInfo user={user} />}
+      {/* <UserCardInfo user={user} /> */}
     </>
   );
 };

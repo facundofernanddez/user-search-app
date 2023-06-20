@@ -6,7 +6,7 @@ import { LocationIcon } from "./icons/LocationIcon";
 import { TwitterIcon } from "./icons/TwitterIcon";
 
 interface Props {
-  user: User | null;
+  user: User;
 }
 
 export const UserCardInfo = ({ user }: Props) => {
@@ -16,28 +16,33 @@ export const UserCardInfo = ({ user }: Props) => {
         <GithubIcon className="relative top-2 h-full w-full" />
       </div>
       <div className="section-title">
-        <h2 className="font-bold text-3xl">the octocat</h2>
-        <p>@octocat</p>
+        <h2 className="font-bold text-3xl">{user.name}</h2>
+        <p>@{user.login}</p>
       </div>
       <div className="section-date lg:text-right">
-        <p>Joined 25 Jan 2011</p>
+        <p>
+          {new Date(user.created_at || "").toLocaleDateString("en-US", {
+            year: "numeric",
+            month: "long",
+            day: "numeric",
+          })}
+        </p>
       </div>
       <p className="section-description mt-8 leading-loose">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corrupti
-        minima explicabo voluptatum, totam, blanditiis adipisci architecto
+        {user.bio || "No user bio"}
       </p>
       <div className="section-number mt-4 flex justify-around bg-blue-950 p-8 rounded-xl text-center">
         <article>
           <p>Repos</p>
-          <p className="font-bold text-xl">8</p>
+          <p className="font-bold text-xl">{user.public_repos}</p>
         </article>
         <article>
           <p>Followers</p>
-          <p className="font-bold text-xl">345</p>
+          <p className="font-bold text-xl">{user.followers}</p>
         </article>
         <article>
           <p>Following</p>
-          <p className="font-bold text-xl">8</p>
+          <p className="font-bold text-xl">{user.following}</p>
         </article>
       </div>
       <div className="section-social md:grid grid-cols-2 mt-4 space-y-3">
@@ -45,25 +50,27 @@ export const UserCardInfo = ({ user }: Props) => {
           <i>
             <LocationIcon className="fill-white" width={"1rem"} />
           </i>
-          <a href="#">san francisco</a>
+          <span>{user.location}</span>
         </article>
         <article className="flex space-x-2">
           <i>
             <LinkIcon className="fill-white" width={"1rem"} />
           </i>
-          <a href="#">https://www.github.com</a>
+          <a href="#">{user.blog || "not information"}</a>
         </article>
         <article className="flex space-x-2">
           <i>
             <TwitterIcon className="fill-white" width={"1rem"} />
           </i>
-          <a href="#">https://www.twitter.com</a>
+          <a href={`https://www.twitter.com/${user.twitter_username}`}>
+            {user.twitter_username || "no twitter"}
+          </a>
         </article>
         <article className="flex space-x-2">
           <i>
             <BuildingIcon className="fill-white" width={"1rem"} />
           </i>
-          <a href="#">@github</a>
+          <span>{user.company || "not information"}</span>
         </article>
       </div>
     </article>
