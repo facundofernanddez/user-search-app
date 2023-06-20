@@ -1,10 +1,15 @@
+import { User } from "@/interfaces/user";
 import { BuildingIcon } from "./icons/BuildingIcon";
 import { GithubIcon } from "./icons/GithubIcon";
 import { LinkIcon } from "./icons/LinkIcon";
 import { LocationIcon } from "./icons/LocationIcon";
 import { TwitterIcon } from "./icons/TwitterIcon";
 
-export const UserCardInfo = () => {
+interface Props {
+  user: User | null;
+}
+
+export const UserCardInfo = ({ user }: Props) => {
   return (
     <article className="grid-areas p-4 rounded-xl bg-blue-900 text-white">
       <div className="section-logo mr-3 bg-gray-200 grid place-content-center rounded-full h-24 w-24 p-1 lg:mx-auto">

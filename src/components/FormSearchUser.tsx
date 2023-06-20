@@ -1,18 +1,15 @@
-"use client";
 import { SearchIcon } from "@/components/icons/SearchIcon";
 
-export const FormSearchUser = () => {
-  const getUser = async (username: string) => {
-    const res = await fetch(`https://api.github.com/users/${username}`);
-    const data = await res.json();
+interface Props {
+  getUser: (username: string) => Promise<void>;
+}
 
-    return data;
-  };
-
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+export const FormSearchUser = ({ getUser }: Props) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const username = e.currentTarget.username.value;
     if (!username) return;
+    await getUser(username);
   };
 
   return (
