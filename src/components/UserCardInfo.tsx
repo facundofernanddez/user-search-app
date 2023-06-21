@@ -4,6 +4,7 @@ import { GithubIcon } from "./icons/GithubIcon";
 import { LinkIcon } from "./icons/LinkIcon";
 import { LocationIcon } from "./icons/LocationIcon";
 import { TwitterIcon } from "./icons/TwitterIcon";
+import Image from "next/image";
 
 interface Props {
   user: User;
@@ -19,7 +20,14 @@ const validateUrl = (url: string) => {
 export const UserCardInfo = ({ user }: Props) => {
   return (
     <article className="grid-areas p-4 rounded-xl bg-blue-900 text-white">
-      <div className="section-logo mr-3 bg-gray-200 grid place-content-center rounded-full h-24 w-24 p-1 lg:mx-auto">
+      <div className="overflow-hidden section-logo mr-3 bg-gray-200 grid place-content-center rounded-full h-24 w-24 p-1 lg:mx-auto">
+        <Image
+          src={user.avatar_url}
+          alt="image"
+          width={96}
+          height={96}
+          className="rounded-full"
+        />
         <GithubIcon className="relative top-2 h-full w-full" />
       </div>
       <div className="section-title">
