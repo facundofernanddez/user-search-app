@@ -19,7 +19,7 @@ const validateUrl = (url: string) => {
 
 export const UserCardInfo = ({ user }: Props) => {
   return (
-    <article className="grid-areas p-4 rounded-xl bg-blue-900 text-white">
+    <article className="grid-areas p-4 rounded-xl dark:bg-blue-900 dark:text-white shadow-md dark:shadow-none bg-white">
       <div className="overflow-hidden section-logo mr-3 bg-gray-200 grid place-content-center rounded-full h-24 w-24 p-1 lg:mx-auto">
         <Image
           src={user.avatar_url}
@@ -32,7 +32,7 @@ export const UserCardInfo = ({ user }: Props) => {
       </div>
       <div className="section-title">
         <h2 className="font-bold text-3xl">{user.name}</h2>
-        <p>@{user.login}</p>
+        <p className="dark:text-white text-blue-500">@{user.login}</p>
       </div>
       <div className="section-date lg:text-right">
         <p>
@@ -46,7 +46,7 @@ export const UserCardInfo = ({ user }: Props) => {
       <p className="section-description mt-8 leading-loose">
         {user.bio || "No user bio"}
       </p>
-      <div className="section-number mt-4 flex justify-around bg-blue-950 p-8 rounded-xl text-center">
+      <div className="section-number mt-4 flex justify-around dark:bg-blue-950 bg-blue-50 p-8 rounded-xl dark:text-white text-blue-950 text-center">
         <article>
           <p>Repos</p>
           <p className="font-bold text-xl">{user.public_repos}</p>
@@ -63,13 +63,19 @@ export const UserCardInfo = ({ user }: Props) => {
       <div className="section-social md:grid grid-cols-2 mt-4 space-y-3">
         <article className="flex space-x-2">
           <i>
-            <LocationIcon className="fill-white" width={"1rem"} />
+            <LocationIcon
+              className="dark:fill-white fill-blue-950"
+              width={"1rem"}
+            />
           </i>
           <span>{user.location}</span>
         </article>
         <article className="flex space-x-2">
           <i>
-            <LinkIcon className="fill-white" width={"1rem"} />
+            <LinkIcon
+              className="dark:fill-white fill-blue-950"
+              width={"1rem"}
+            />
           </i>
           <a href={validateUrl(user.blog)} className="truncate">
             {user.blog || "not information"}
@@ -77,7 +83,10 @@ export const UserCardInfo = ({ user }: Props) => {
         </article>
         <article className="flex space-x-2">
           <i>
-            <TwitterIcon className="fill-white" width={"1rem"} />
+            <TwitterIcon
+              className="dark:fill-white fill-blue-950"
+              width={"1rem"}
+            />
           </i>
           <a href={`https://www.twitter.com/${user.twitter_username}`}>
             {user.twitter_username || "no twitter"}
@@ -85,7 +94,10 @@ export const UserCardInfo = ({ user }: Props) => {
         </article>
         <article className="flex space-x-2">
           <i>
-            <BuildingIcon className="fill-white" width={"1rem"} />
+            <BuildingIcon
+              className="dark:fill-white fill-blue-950"
+              width={"1rem"}
+            />
           </i>
           <span>{user.company || "not information"}</span>
         </article>

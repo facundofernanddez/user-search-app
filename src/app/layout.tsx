@@ -17,9 +17,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
+    <html lang="en" className="">
       <body className={spaceGrotesk.className}>
-        <div className="grid px-4 min-h-screen bg-blue-950 place-content-center">
+        <div className="grid px-4 min-h-screen dark:bg-blue-950 bg-blue-50 place-content-center">
           <div className="sm:w-[500px] md:w-[600px] lg:w-[700px]">
             <Navbar />
             {children}

@@ -1,12 +1,48 @@
+"use client";
+
+import { useEffect, useState } from "react";
 import { SunIcon } from "./icons/SunIcon";
+import { MoonIcon } from "./icons/MoonIcon";
+
+const initialThemeState = () => {
+  if (localStorage.getItem("theme")) {
+    return localStorage.getItem("theme") as "light" | "dark";
+  }
+  return window.matchMedia("(prefers-color-scheme: dark)").matches
+    ? "dark"
+    : "light";
+};
 
 export const Navbar = () => {
+  const [theme, setTheme] = useState<"light" | "dark">(initialThemeState);
+
+  useEffect(() => {
+    if (theme === "dark") {
+      document.documentElement.classList.add("dark");
+    } else {
+      document.documentElement.classList.remove("dark");
+    }
+    localStorage.setItem("theme", theme);
+  }, [theme]);
+
+  const handleTheme = () => {
+    setTheme(theme === "dark" ? "light" : "dark");
+  };
+
   return (
     <header className="flex items-center space-x-2 mb-10">
-      <h1 className="text-white text-4xl font-bold flex-grow">devfinder</h1>
-      <span className="uppercase text-white">Light</span>
-      <button>
-        <SunIcon className="fill-white" />
+      <h1 className="dark:text-white text-blue-950 text-4xl font-bold flex-grow">
+        devfinder
+      </h1>
+      <span className="uppercase dark:text-white text-blue-950">
+        {theme === "light" ? "dark" : "light"}
+      </span>
+      <button onClick={handleTheme}>
+        {theme === "light" ? (
+          <MoonIcon className="dark:fill-white fill-blue-950" />
+        ) : (
+          <SunIcon className="dark:fill-white fill-blue-950" />
+        )}
       </button>
     </header>
   );
