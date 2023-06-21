@@ -9,6 +9,13 @@ interface Props {
   user: User;
 }
 
+const validateUrl = (url: string) => {
+  if (!/^https?:\/\//i.test(url)) {
+    url = "https://" + url;
+  }
+  return url;
+};
+
 export const UserCardInfo = ({ user }: Props) => {
   return (
     <article className="grid-areas p-4 rounded-xl bg-blue-900 text-white">
@@ -56,7 +63,9 @@ export const UserCardInfo = ({ user }: Props) => {
           <i>
             <LinkIcon className="fill-white" width={"1rem"} />
           </i>
-          <a href="#">{user.blog || "not information"}</a>
+          <a href={validateUrl(user.blog)} className="truncate">
+            {user.blog || "not information"}
+          </a>
         </article>
         <article className="flex space-x-2">
           <i>
