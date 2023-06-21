@@ -5,12 +5,15 @@ import { SunIcon } from "./icons/SunIcon";
 import { MoonIcon } from "./icons/MoonIcon";
 
 const initialThemeState = () => {
-  if (localStorage.getItem("theme")) {
-    return localStorage.getItem("theme") as "light" | "dark";
+  if (typeof window !== "undefined") {
+    if (localStorage.getItem("theme")) {
+      return localStorage.getItem("theme") as "light" | "dark";
+    }
+    return window.matchMedia("(prefers-color-scheme: dark)").matches
+      ? "dark"
+      : "light";
   }
-  return window.matchMedia("(prefers-color-scheme: dark)").matches
-    ? "dark"
-    : "light";
+  return "dark";
 };
 
 export const Navbar = () => {
