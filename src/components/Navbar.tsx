@@ -17,12 +17,12 @@ const initialThemeState = () => {
 };
 
 export const Navbar = () => {
-  // const [hasMounted, setHasMounted] = useState(false);
+  const [hasMounted, setHasMounted] = useState(false);
   const [theme, setTheme] = useState<"light" | "dark">(initialThemeState);
 
-  /*  useEffect(() => {
+  useEffect(() => {
     setHasMounted(true);
-  }, []); */
+  }, []);
 
   useEffect(() => {
     if (theme === "dark") {
@@ -33,9 +33,9 @@ export const Navbar = () => {
     localStorage.setItem("theme", theme);
   }, [theme]);
 
-  /* if (!hasMounted) {
+  if (!hasMounted) {
     return <>Cargando...</>;
-  } */
+  }
 
   const handleTheme = () => {
     setTheme(theme === "dark" ? "light" : "dark");
