@@ -21,10 +21,10 @@ export interface User {
   company: string;
   blog: string;
   location: string;
-  email: any;
+  email: string;
   hireable: any;
   bio: string;
-  twitter_username: any;
+  twitter_username: string;
   public_repos: number;
   public_gists: number;
   followers: number;
